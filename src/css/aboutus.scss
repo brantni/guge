@@ -1,0 +1,119 @@
+@mixin flex-content($justify-content){
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:$justify-content;
+}
+.bodyContainer{
+    width:100%;
+    background-color: #F8FAFD;
+    text-align:center;
+    .title{
+        padding-top: 40px;
+        font-size: 32px;
+    }
+}
+.mainContainer{
+    background:#fff;
+    width:80%;
+    margin:0 auto;
+    margin-top:40px;
+    padding-bottom: 20px;
+    .comIntroWrap{
+        border-bottom: 1px solid #F0F0F0;
+        padding:10px 0 15px 0;
+        .comIntro{
+            width:70%;
+            margin:0 auto;
+            .comName{
+                font-size:22px;
+                line-height:60px;
+                font-weight: 700;
+            }
+            .detail{
+                font-size:14px;
+            }
+        }
+    }
+    .teamTitle{
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+    .teamContainer{
+        margin:0 15px;
+        padding: 4px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size:14px;
+        .ceo{
+            width:200px;
+            margin:0 auto;
+            padding-top:15px;
+            margin-bottom:15px;
+            .ceoImg{
+                width:200px;
+                height:200px;
+                background:url(../image/avatar.jpg) no-repeat left center;
+                background-size:100% 100%;
+                border-radius:50%;
+            }
+            .name{
+                font-weight: 700;
+                line-height: 36px;
+                font-size: 18px;
+            }
+            .position{
+                line-height:20px;
+            }
+        }
+        .teamMember{
+            width: 840px;
+            margin:0 auto;
+            margin-top:30px;
+            @include flex-content(center);
+            flex-wrap:wrap;
+            .member{
+                width:205px;
+                padding: 4px;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin-right:5px;
+                .avatar{
+                    width:150px;
+                    height:150px;
+                    border-radius:50%;
+                    margin:0 auto;
+                }
+                .tianyi{
+                    background:url(../image/tianyi.jpg) no-repeat left center;
+                    background-size:100% 100%;
+                }
+                .yuxuan{
+                    background:url(../image/yuxuan.jpg) no-repeat left center;
+                    background-size:100% 100%;
+                }
+                .yangwenguo{
+                    background:url(../image/yangwenguo.jpg) no-repeat left center;
+                    background-size:100% 100%;
+                }
+                .yutao{
+                    background:url(../image/yutao.jpg) no-repeat left center;
+                    background-size:100% 100%;
+                }
+                .name{
+                    line-height: 36px;
+                    font-size: 18px;
+                    margin-top:5px;
+                }
+                .position{
+                    line-height:20px;
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+}

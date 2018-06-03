@@ -1,0 +1,54 @@
+@mixin flex-content($justify-content){
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:$justify-content;
+}
+header{
+    width: 100%;
+    min-height: 50px;
+    font-size: 14px;    
+    color: #333;
+    min-width: 860px;
+    @include flex-content(space-between);
+    border: 1px solid transparent{
+        color:#e7e7e7;
+    };
+    background-color: #f8f8f8;
+    
+    a{
+        display:block;
+    }
+    nav{
+        padding:0 40px;
+        height: 100%;
+        cursor: pointer;
+        line-height: 50px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #777;
+    }
+    nav:hover{
+        color:#333;
+    }
+    .logo{
+        width:120px;
+        height:29px;
+        margin-left:15px;
+    }
+    .navbar{
+        @include flex-content(flex-start);
+        margin-right:15px;
+    }
+    .navBack{
+        background:#e7e7e7;
+        nav{
+            color:#3B4E9E;
+            &:hover{
+                color:#3B4E9E;
+            }
+        }
+    }
+}

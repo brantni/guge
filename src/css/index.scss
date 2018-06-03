@@ -1,0 +1,118 @@
+@mixin sliderButton{
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height:100%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+    cursor:pointer;
+}
+@mixin flex-content($justify-content){
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:$justify-content;
+}
+#indexSliderWrap{
+    width:100%;
+    $height:430px;
+    min-width: 860px;
+    height:430px;
+    position:relative;
+    overflow:hidden;
+    .sliderItem{
+        position:absolute;
+        top:0;
+        width:100%;
+        height:$height;
+        transition: left .6s ease-in-out;
+    }
+    .fir{
+        left:0;
+    }
+    .sec{
+        left:100%;
+    }
+    .sliderButtonPrev{
+        @include sliderButton;
+        left:0;
+        background-image: -webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+        background-image: -o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+        background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));
+        background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+        background-repeat: repeat-x;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+            filter: alpha(opacity=90);
+            outline: 0;
+            opacity: .9;
+        }
+    }
+    .sliderButtonNext{
+        @include sliderButton;
+        right: 0;
+        left: auto;
+        background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+        background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+        background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
+        background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+        background-repeat: repeat-x;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+            filter: alpha(opacity=90);
+            outline: 0;
+            opacity: .9;
+        }
+    }
+}
+.middle{
+    background-color: #F8FAFD;
+    padding-bottom:20px;
+    text-align:center;
+    min-width: 860px;
+    .focusTitle{
+        font-size:24px;
+        font-weight:500;
+        padding: 40px 0;
+    }
+    .focusList{
+        @include flex-content(space-between);
+        width:860px;
+        margin:0 auto;
+        .focusItem{
+            width:200px;
+            padding:4px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            img{
+                width:100%;
+                height:auto;
+            }
+            .wordWrap{
+                padding: 9px;
+                color: #333;
+                .title{
+                    font-size: 18px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+                .content{
+                    font-size:14px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

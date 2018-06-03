@@ -1,0 +1,64 @@
+@mixin flex-content($justify-content){
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:$justify-content;
+}
+footer{
+    width: 100%;
+    font-size: 14px;    
+    min-width: 700px;
+    background-color: #1A2741;
+    color: white;
+    padding-top:15px;
+    .content{
+        @media screen and (min-width: 768px){
+            width: 750px;
+        }
+        @media screen and (min-width: 992px){
+            width: 970px;
+        }
+        @media screen and (min-width: 1200px){
+            width: 1170px;
+        }
+        margin:0 auto;
+        .contactWrap{
+            border-bottom:1px solid #D5D5D5;
+            padding-bottom: 20px;
+            @include flex-content(flex-start);
+            .contact{
+                flex:1;
+                line-height:28px;
+                .big{
+                    font-size:30px;
+                    margin-bottom: 10px;
+                    line-height: 35px;
+                }
+            }
+            .erweima{
+                flex:1;
+                img{
+                    width:90px;
+                    height:90px;
+                    display:block;
+                    margin-left:10px;
+                }
+            }
+        }
+        .bottom{
+            text-align:center;
+            font-weight: 500;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            .company{
+                font-size:18px;
+                line-height: 70px;
+                margin-bottom: 10px;
+            }
+            .hao{
+                font-size:14px;
+                line-height:28px;
+            }
+        }
+    }
+}

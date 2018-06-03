@@ -1,0 +1,20 @@
+body { font-family:Arial,'Microsoft Yahei','微软雅黑','hiragino sans gb',simsun; color:#333;}
+.g-clear:after { display: block; clear: both; visibility: hidden; height: 0; content: ''; }
+.g-clear { *zoom: 1; }
+.g-wrap{ width:1000px; margin:0 auto;}
+/*reset style*/
+*{ margin: 0; padding: 0;box-sizing: border-box; }
+table { border-collapse: collapse; border-spacing: 0; }
+li{ list-style: none; }
+fieldset{ border:none;}
+h1,h2,h3,h4,h5,h6{ font-weight:normal; font-size:100%;}
+b{ font-weight:normal;}
+img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+/*ie 6,7 maybe show border*/
+img{border:none;}
+em{ font-style:normal;}
+a{ text-decoration:none; color: #222;}
